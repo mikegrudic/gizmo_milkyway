@@ -295,6 +295,7 @@ def write_gizmo(fname, parts, cs, gamma, component_ids, bfield=None, metallicity
 
 CONFIG = {
     "fire3": """FIRE_PHYSICS_DEFAULTS=3
+SNE_BROADCAST_TIMESTEP                # without it, supernovae create energy in gas on long timesteps
 INIT_STELLAR_METALS_AGES_DEFINED      # InitMetallicity where the ICs give none, ages of the IC stars from InitStellarAge
 MULTIPLEDOMAINS=16
 """,
