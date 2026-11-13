@@ -1,0 +1,18 @@
+# Milky Way Sigma_SFR(R_gal), digitised from Kennicutt & Evans (2012, ARA&A 50, 531), Figure 7 top panel
+# (arXiv:1204.3552). Their values are read from Misiriotis et al. (2006) Fig. 8, which traces back to the
+# H II region radio continuum of Guesten & Mezger (1982), rescaled to a total SFR of 1.9 Msun/yr
+# (Chomiuk & Povich 2011). The uncertainty of 0.3 dex is the one they assigned to every point.
+# The first row is their separate point for the CMZ (R_gal < 250 pc), drawn at 0.5 kpc.
+# Digitisation: marker centres taken as error-bar midpoints, axes calibrated on the major ticks; the
+# recovered bar widths are 0.59-0.60 dex against the stated 0.6, so the values are good to ~0.01 dex.
+# 1 Msun Gyr^-1 pc^-2 = 1e-3 Msun yr^-1 kpc^-2
+# R_gal[kpc]  log10 Sigma_SFR[Msun Gyr^-1 pc^-2]  err[dex]
+0.5    2.50   0.3
+1.0    0.25   0.3
+3.0    0.44   0.3
+5.0    0.65   0.3
+7.0    0.45   0.3
+9.0    0.40   0.3
+11.0   0.20   0.3
+13.0   0.05   0.3
+15.0  -0.50   0.3

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*~
+runs/
+*.hdf5
+*.png
+GIZMO
+*.log
