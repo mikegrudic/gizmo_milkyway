@@ -50,9 +50,8 @@ ax.set_ylim(1e-3, 1e3)
 ax.set_xlabel(r"$R_{\rm gal}$ [kpc]")
 ax.set_ylabel(r"$\Sigma_{\rm gas}$ [M$_\odot$ pc$^{-2}$] or $\Sigma_{\rm SFR}$ [M$_\odot$ pc$^{-2}$ Gyr$^{-1}$]")
 handles = [Line2D([], [], color=c, marker=m, mfc="white", ms=8 if m == "*" else 5.5, lw=2, label=lab) for _, c, m, lab in series]
-handles += [Line2D([], [], color="0.4", lw=2, label=f"simulation, t = {time * MYR:.0f} Myr"),
-            Line2D([], [], color="0.4", marker="o", mfc="white", ls="", label="Milky Way (Kennicutt \\& Evans 2012)")]
-ax.legend(handles=handles, frameon=False, fontsize=8, ncol=2, loc="upper right", columnspacing=1.5)
+ax.legend(handles=handles, frameon=False, fontsize=8, ncol=3, loc="upper right", columnspacing=1.5, title_fontsize=8,
+          title=f"lines: simulation, t = {time * MYR:.0f} Myr\npoints: Milky Way (Kennicutt \\& Evans 2012)")
 fig.savefig(plot, dpi=200, bbox_inches="tight")
 print("plot:", plot)
 print(f"t = {time * MYR:.0f} Myr; SFR over the last {WINDOW:.0f} Myr: {ms[young].sum() / (WINDOW * 1e6):.2f} Msun/yr ({young.sum()} particles)")
