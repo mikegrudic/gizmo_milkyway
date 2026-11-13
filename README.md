@@ -91,7 +91,7 @@ Scripts are in `analysis/`. The Milky Way profiles in `analysis/data/` are from 
 | `plot_gas_profiles.py <run>` | Atomic and molecular surface density profiles at every snapshot, against the Milky Way. |
 | `plot_profiles.py <snapshot>` | Atomic gas, molecular gas and star formation rate profiles, against the Milky Way. |
 | `plot_sigma_sfr.py <run>` | Star formation rate surface density profile at every snapshot. |
-| `plot_sfr.py <run>` | Star formation history. |
+| `plot_sfr.py <run> [<run> ...]` | Star formation histories; several runs are overlaid and labelled by the parameter they differ in. |
 | `plot_ism.py <snapshot>` | Star formation rate profile and gas phase diagram. |
 | `plot_phase_radial.py <run> [first] [last]` | Gas phase diagrams in radial annuli, stacked over a range of snapshots. |
 
