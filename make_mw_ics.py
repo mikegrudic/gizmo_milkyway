@@ -358,6 +358,7 @@ ResubmitCommand                    none
 
 FIRE_PARAMS = """InitMetallicity                    {Z:g}            % solar units: IC stars, and the gas if the ICs give no Metallicity
 SfEffPerFreeFall                   {eps_ff:g}
+CritPhysDensity                    {nth:g}            % star formation density threshold, n_H [cm^-3]
 InitStellarAge                     {age:g}           % Gyr; IC stars get ages uniform in [0, 2x this]: {sfr:.2g} Msun/yr of stars forming
 """
 
@@ -381,7 +382,7 @@ def write_setup(a, mstar_total):
         f.write(CONFIG[a.setup].format(gamma=a.gamma, cs2=a.cs**2, cs=a.cs))
         if a.b0 > 0:
             f.write(MHD_CONFIG[a.setup])
-    fire = "" if iso else FIRE_PARAMS.format(Z=a.metallicity, eps_ff=a.eps_ff, age=a.stellar_age,
+    fire = "" if iso else FIRE_PARAMS.format(Z=a.metallicity, eps_ff=a.eps_ff, nth=a.sf_density, age=a.stellar_age,
                                              sfr=mstar_total / (2e9 * a.stellar_age))
     with open(os.path.join(a.outdir, "mw.params"), "w") as f:
         f.write(PARAMS.format(
@@ -419,6 +420,8 @@ def main():
                     help="lian23: radial profile of young stars from Lian et al. (2023), written to the ICs "
                          "(needs a GIZMO that reads IC metallicities); uniform: InitMetallicity")
     ap.add_argument("--eps-ff", type=float, default=1.0, help="SfEffPerFreeFall, star formation efficiency per free-fall time")
+    ap.add_argument("--sf-density", type=float, default=1.0,
+                    help="CritPhysDensity, density threshold for star formation, n_H [cm^-3]; 1 is the FIRE-3 default")
     ap.add_argument("--stellar-age", type=float, default=10.0, help="InitStellarAge [Gyr]")
     ap.add_argument("--tmax", type=float, default=1000.0, help="run time [Myr]")
     ap.add_argument("--dtsnap", type=float, default=10.0, help="snapshot interval [Myr]")

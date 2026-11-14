@@ -74,6 +74,7 @@ The generator writes:
 | `--metallicity` | 1.0 | `InitMetallicity` [solar], used for the stars in the ICs. |
 | `--stellar-age` | 10 | `InitStellarAge` [Gyr]. |
 | `--eps-ff` | 1.0 | `SfEffPerFreeFall`. |
+| `--sf-density` | 1.0 | `CritPhysDensity`, the star formation density threshold in n_H [cm^-3]. |
 | `--tmax`, `--dtsnap` | 1000, 10 | Run time and snapshot interval [Myr]. |
 | `--maxmem` | 12000 | `MaxMemSize` [MB per MPI rank]. |
 | `--gas-rmax` | 30 | Outer edge of the gas disc [kpc]. |
